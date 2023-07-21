@@ -3,4 +3,4 @@
 
 ### Collaborators:
 - `Stephen Omoregie: @Cr8SteveDesign`
-- `Favour: @callmeKORRA03`
+- `Favour Chibuike: @callmeKORRA03`
