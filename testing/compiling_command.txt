@@ -1,0 +1,8 @@
+# For Testing Purposes
+
+#The testing file, should be in the main.c file within the test directory. We'll compile from that directory while referencing to all the c files in the main repo.
+
+# For testing purposes, let's also keep the main.h inside the test folder for now
+
+gcc -Wall -Werror -Wextra -pedantic -std=gnu89 main.c ../*.c -o testing
+
