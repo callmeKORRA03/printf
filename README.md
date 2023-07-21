@@ -1,6 +1,6 @@
-# Collaboration Practice: ALX Software Engineering
+# Collaboration Project: ALX Software Engineering 
 ## The Re-Birth of the printf function in the C Programming Language
 
 ### Collaborators:
-- `Stephen Omoregie: gitHub Username`
 - `Favour Chibuike: @callmeKORRA03`
+- `Stephen Omoregie: @Cr8steveDesign`
