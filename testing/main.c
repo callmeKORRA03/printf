@@ -11,6 +11,8 @@ int main(void)
 {
     int len;
     int len2;
+    int num1 = 49847301;
+    int printIntReturnValue = 0;
     /*
      unsigned int ui;
      void *addr;
@@ -23,6 +25,21 @@ int main(void)
     _putchar('\n');
 
     len = _putchar('m');
+    _putchar('\n');
+
+    /* Printing integers */
+
+    printIntReturnValue = _printint(15245345);
+    _putchar('\n');
+
+    _printint(num1);
+    _putchar('\n');
+
+    printf("The integer printing function returns: ");
+    _printint(printIntReturnValue);
+    _putchar('\n');
+
+    /* Printing*/
 
     printf("\n%d\n", len);
 
