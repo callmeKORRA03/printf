@@ -1,5 +1,5 @@
 #include <unistd.h>
-#include "testing/main.h"
+#include "main.h"
 
 /**
  * _putstring - A function used to return a string

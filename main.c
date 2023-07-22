@@ -31,7 +31,6 @@ int main(void)
    len2 = printf("Let's try to printf a simple sentence.\n");
 
     */
-
     /* Always remember to comment or un-comment based on functionalities that we have implemented before testing with the file
 
     _printf("Length:[%d, %i]\n", len, len);

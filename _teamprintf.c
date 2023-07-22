@@ -1,6 +1,6 @@
 #include <unistd.h>
 #include <stdarg.h>
-#include "testing/main.h"
+#include "main.h"
 /**
  * _printf - A function to print char, string and hanle %
  * @format: A varible that is used to chnage the condition of the file

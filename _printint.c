@@ -1,5 +1,5 @@
 #include <unistd.h>
-#include "testing/main.h"
+#include "main.h"
 /**
  * _printint - A function that receives an integer and prints
  * it out, one character at a time. Both positive and negative
