@@ -40,7 +40,7 @@ int _printf(const char *format, ...)
 					count += _printint(num);
 				break;
 			}
-			format++;
+			/*format++; */
 		}
 		else
 			count += _putchar(*format);

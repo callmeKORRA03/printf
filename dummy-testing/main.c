@@ -26,7 +26,7 @@ int main(void)
 	_printf("%d", 10);
 	_putchar('\n');
 
-	_printf("Printing %i\n");
+	_printf("Printing %i\n",'a');
 	_putchar('\n');
 
 	_printf("%i", 1057478);
