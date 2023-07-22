@@ -9,13 +9,13 @@
 
 int _putstring(char *str)
 {
-        int i = 0;
+	int i = 0;
 
-        while (*str)
-        {
-                write(1, str, 1);
-                str++;
-                i++;
-        }
-        return (i);
+	while (*str)
+	{
+		write(1, str, 1);
+		str++;
+		i++;
+	}
+	return (i);
 }

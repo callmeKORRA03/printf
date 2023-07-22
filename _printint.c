@@ -12,6 +12,12 @@ int _printint(int num)
 	int count = 0, index = 0, i;
 	char ch = '-', buff[20];
 
+	if (!num)
+	{
+		write(1, &index, 1);
+		return (1);
+	}
+
 	if (num < 0)
 	{
 		write(1, &ch, 1), num = -num;

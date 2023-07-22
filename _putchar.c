@@ -8,10 +8,10 @@
 
 int _putchar(char c)
 {
-    int count = 0;
+	int count = 0;
 
-    write(1, &c, 1);
-    count++;
+	write(1, &c, 1);
+	count++;
 
-    return (count);
+	return (count);
 }

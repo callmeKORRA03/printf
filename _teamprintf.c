@@ -8,58 +8,43 @@
  */
 int _printf(const char *format, ...)
 {
-	int count; /* used to return number of characters */
+	int count = 0, num;
+	char character, *string;
 	va_list args;
-
-	count = 0;
 	va_start(args, format);
 
-	while (*format == '\0')
+	while (*format)
 	{
 		if (*format == '%')
 		{
 			format++;
 			switch (*format)
 			{
-				case '%':
-                                        {
-                                                count += _putchar('%');
-
-                                                break;
-                                        }
-				case 'c':
-					{
-						char character = (char)va_arg(args, int);
-
-						count += _putchar(character);
-						break;
-					}
-				case 's':
-					{
-						char *string = va_arg(args, char *);
-
-						count += _putstring(string);
-						break;
-					}
-				case 'd':
-				case 'i':
-					{
-						int num = va_arg(args, int);
-
-						count += _printint(num);
-						break;
-					}
-			default:
-					count += _putchar('%');
-					count += _putchar(*format);
-					break;
+			case '%':
+				count += _putchar('%');
+				break;
+			case 'c':
+				character = (char)va_arg(args, int);
+				count += _putchar(character);
+				break;
+			case 's':
+				string = va_arg(args, char *);
+				count += _putstring(string);
+				break;
+			case 'd':
+			case 'i':
+				num = va_arg(args, int);
+				if (num == 0)
+					count += _putchar('0');
+				else
+					count += _printint(num);
+				break;
 			}
-		}
-		else
-		{
-			count += _putchar(*format);
 			format++;
 		}
+		else
+			count += _putchar(*format);
+		format++;
 	}
 	va_end(args);
 	return (count);
