@@ -10,38 +10,22 @@
 int main(void)
 {
     int len;
-    int len2;
-    int num1 = 49847301;
-    int printIntReturnValue = 0;
-    /*
-     unsigned int ui;
-     void *addr;
-    ui = (unsigned int)INT_MAX + 1024;
-    addr = (void *)0x7ffe637541f0;
-
-     */
+    char *project = "PrintF Function";
+    char grade = 'A';
 
     _putchar('d');
     _putchar('\n');
+    _putstring("The String print outs works \n");
 
     len = _putchar('m');
     _putchar('\n');
 
-    /* Printing integers */
+    _printf("\n%d\n", len);
 
-    printIntReturnValue = _printint(15245345);
-    _putchar('\n');
-
-    _printint(num1);
-    _putchar('\n');
-
-    printf("The integer printing function returns: ");
-    _printint(printIntReturnValue);
-    _putchar('\n');
-
-    /* Printing*/
-
-    printf("\n%d\n", len);
+    _printf("%d", 10);
+    _printf("Project: %s Expected Grade: %c \n", project, grade);
+    _printf("Double %%: %%\n");
+    _printf("Double %% with value: %% %c\n", 'X');
 
     /*len = _printf("Let's try to printf a simple sentence.\n");
    len2 = printf("Let's try to printf a simple sentence.\n");
