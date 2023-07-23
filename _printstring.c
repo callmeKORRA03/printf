@@ -16,8 +16,11 @@ int _putstring(va_list args, char *str)
 
 	(void)str;
 
-	if (!retrieve_string)
-		retrieve_string = "(null)";
+	if (retrieve_string == NULL)
+	{
+		write(1, "(null)", 6);
+		return (6);
+	}
 
 	while (*retrieve_string)
 	{
