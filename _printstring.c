@@ -3,19 +3,27 @@
 
 /**
  * _putstring - A function used to return a string
- * @str: used to return any string passed to it
+ * @args: Argument list from parent _printf function call
+ * @str: for testing character case - may later be useful
+ * for width and other flags
  * Return: Return number of characters sucessfully printed
  */
 
-int _putstring(char *str)
+int _putstring(va_list args, char *str)
 {
-	int i = 0;
+	int print_count = 0;
+	char *retrieve_string = va_arg(args, char *);
 
-	while (*str)
+	(void)str;
+
+	if (!retrieve_string)
+		retrieve_string = "(null)";
+
+	while (*retrieve_string)
 	{
-		write(1, str, 1);
-		str++;
-		i++;
+		write(1, retrieve_string, 1);
+		retrieve_string++;
+		print_count++;
 	}
-	return (i);
+	return (print_count);
 }

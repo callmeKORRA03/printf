@@ -1,17 +1,22 @@
-#include <unistd.h>
+#include "main.h"
 
 /**
- * nputchar -Prints a character and returns an integer (1) per call
- * @c: Character to be printed
- * Return: (1) Always
+ * _putchar -Prints a character and returns
+ * an integer (1) per call
+ * @args: Argument list passed from main function
+ * @str: Format string to confirm current format specifier
+ * Return: (counter) - returns the number of characters printed
  */
 
-int _putchar(char c)
+int _putchar(va_list args, char *str)
 {
-	int count = 0;
+	int counter = 0;
+	char retrieve_char = va_arg(args, int);
 
-	write(1, &c, 1);
-	count++;
+	(void)str;
 
-	return (count);
+	write(1, &retrieve_char, 1);
+	counter++;
+
+	return (counter);
 }

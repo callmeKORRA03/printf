@@ -3,25 +3,32 @@
 /**
  * _printint - A function that receives an integer and prints
  * it out, one character at a time. Both positive and negative
- * @num: Positive or negative integer
- * Return: count - returns the number of characters printed
+ * @args: Argument list passed from main function
+ * @str: Format string to confirm current format specifier
+ * Return: (counter) - returns the number of characters printed
  */
 
-int _printint(int num)
+int _printint(va_list args, char *str)
 {
-	int count = 0, index = 0, i;
+	int num, i, counter, index;
 	char ch = '-', buff[20];
 
-	if (!num)
+	counter = 0, index = 0;
+
+	(void)str;
+
+	num = va_arg(args, int);
+
+	if (num == 0)
 	{
-		write(1, &index, 1);
+		write(1, "0", 1);
 		return (1);
 	}
 
 	if (num < 0)
 	{
 		write(1, &ch, 1), num = -num;
-		count++;
+		counter++;
 	}
 
 	while (num)
@@ -31,7 +38,10 @@ int _printint(int num)
 	}
 
 	for (i = index - 1; i >= 0; i--)
-		write(1, &buff[i], 1), count++;
+	{
+		write(1, &buff[i], 1);
+		counter++;
+	}
 
-	return (count);
+	return (counter);
 }
