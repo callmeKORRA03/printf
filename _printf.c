@@ -10,13 +10,11 @@
 int _printf(const char *format, ...)
 {
 	int count = 0, i;
-	char buffer[1024];
 	va_list args;
 
 	functionstruct arrayStructFunction[5] = {
 		{'c', _putchar}, {'s', _putstring}, {'d', _printint}, {'i', _printint},
 		{'u', _printint}};
-	(void)buffer;
 	va_start(args, format);
 	if (format == NULL)
 		return (-1);
@@ -42,10 +40,8 @@ int _printf(const char *format, ...)
 			format++;
 		}
 		else
-		{
 			write(1, format, 1);
-			count++, format++;
-		}
+		count++, format++;
 	}
 	va_end(args);
 	return (count);
