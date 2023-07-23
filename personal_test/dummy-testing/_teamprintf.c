@@ -12,9 +12,8 @@ int _printf(const char *format, ...)
 	int count = 0, i;
 
 	functionstruct arrayStructFunction[5] = {
-		{'c', _putchar}, {'s', _putstring}, {'d', _printint},
-		/*Not important line*/
-		{'i', _printint},
+		{'c', _putchar}, {'s', _putstring}, {'d', _printint}, {'i', _printint},
+		/*Not important line - Just add more function structs here*/
 		{'u', _printint}};
 
 	va_list args;
