@@ -10,7 +10,7 @@
 int _printf(const char *format, ...)
 {
 	int count = 0, i;
-
+	char buffer[1024];
 	functionstruct arrayStructFunction[5] = {
 		{'c', _putchar}, {'s', _putstring}, {'d', _printint}, {'i', _printint},
 		{'u', _printint}};
