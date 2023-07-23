@@ -13,25 +13,23 @@ int _printf(const char *format, ...)
 
 	functionstruct arrayStructFunction[5] = {
 		{'c', _putchar}, {'s', _putstring}, {'d', _printint}, {'i', _printint},
-		/*Not important line - Just add more function structs here*/
 		{'u', _printint}};
-
 	va_list args;
 
 	va_start(args, format);
-
 	if (format == NULL)
-		return (-1);	
+		return (-1);
 	while (*format)
 	{
 		if (*format == '%')
 		{
 			format++;
-			/* loop throu function array to find matching function*/
 			if (*format == '%')
 				write(1, "%", 1), count++;
 			else if (*format == ' ' || *format == '\0')
+			{
 				return (-1);
+			}
 			else
 			{
 				for (i = 0; i < 5; i++)
