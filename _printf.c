@@ -33,7 +33,7 @@ flag1:
 			for (i = 0; i < 6; i++)
 				if (arrayStructFunction[i].c == *format)
 					count += arrayStructFunction[i].fpointer(args, (char *)format);
-			format + 2;
+			format++, format++;
 			goto flag1;
 		}
 		write(1, format, 1);
