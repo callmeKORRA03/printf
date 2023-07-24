@@ -9,7 +9,7 @@
  */
 int _printf(const char *format, ...)
 {
-	int count = 0, i, flagsp = 0;
+	int count = 0, i;
 	va_list args;
 
 	functionstruct arrayStructFunction[6] = {
