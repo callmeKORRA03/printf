@@ -20,9 +20,6 @@ int _printf(const char *format, ...)
 		return (-1);
 	while (*format)
 	{
-		if (!format || (*format == '%' && !(*(format + 1))) ||
-				(*format == '%' && *(format + 1) == ' ' && !(*(format + 2))))
-			return (-1);
 		if (*format == '%')
 		{
 			format++;
@@ -30,10 +27,13 @@ int _printf(const char *format, ...)
 			{
 				return (-1);
 			}
-			for (i = 0; i < 7; i++)
+			else
 			{
-				if (arrayStructFunction[i].c == *format)
-					count += arrayStructFunction[i].fpointer(args, (char *)format);
+				for (i = 0; i < 7; i++)
+				{
+					if (arrayStructFunction[i].c == *format)
+						count += arrayStructFunction[i].fpointer(args, (char *)format);
+				}
 			}
 			format++;
 		}
