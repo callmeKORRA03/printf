@@ -26,7 +26,6 @@ int _printf(const char *format, ...)
 			if (*format == 'v' || *format == 'k')
 			{
 				write(1, "%", 1), write(1, format, 1);
-				count += 2;
 			}
 			else if ((*format == ' ' && *(format + 1) == '\0') || *format == '\0')
 			{
@@ -37,7 +36,7 @@ int _printf(const char *format, ...)
 				if (arrayStructFunction[i].c == *format)
 					count += arrayStructFunction[i].fpointer(args, (char *)format);
 			}
-			format++;
+			/* format++;*/
 		}
 		else
 		{
