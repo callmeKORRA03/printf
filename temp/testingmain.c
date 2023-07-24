@@ -167,6 +167,7 @@ int main(void)
 
     num1 = _printf("A simple %v entence\n");
     num2 = printf("A simple %v entence\n");
+    _printf("Checking the k: %k \n");
     printf("Len:[%d]\n", num1);
     printf("Len1:[%d]\n\n", num2);
 
