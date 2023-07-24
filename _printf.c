@@ -17,7 +17,7 @@ int _printf(const char *format, ...)
 		{'u', _printint}};
 	va_start(args, format);
 	if (format == NULL)
-		return (-1);
+		return (1);
 	while (*format)
 	{
 		if (*format == '%')
@@ -27,7 +27,7 @@ int _printf(const char *format, ...)
 				write(1, "%", 1), count++;
 			else if (*format == ' ' || *format == '\0')
 			{
-				return (-1);
+				return (1);
 			}
 			else
 			{
