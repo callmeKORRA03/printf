@@ -23,10 +23,9 @@ int _printf(const char *format, ...)
 		if (*format == '%')
 		{
 			format++;
-			if (*format == 'k' || *format == 'v' || *format == 'g')
+			if ((*format == ' ' && *(format + 1) == '\0') || *format == '\0')
 			{
-				write(1, "%", 1), write(1, format, 1);
-				count += 2;
+				return (-1);
 			}
 			else
 			{
