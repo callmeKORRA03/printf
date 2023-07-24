@@ -9,7 +9,7 @@
  */
 int _printf(const char *format, ...)
 {
-	int count = 0, i;
+	int count = 0;
 	va_list args;
 
 	va_start(args, format);
@@ -17,6 +17,7 @@ int _printf(const char *format, ...)
 	if ((format == NULL) || (format[0] == '%' && format[1] == '\0')
 			|| (format[0] == '%' && format[1] == ' ' && !format[2]))
 		return (-1);
+
 	while (*format)
 	{
 		if (*format == '%')
@@ -29,11 +30,15 @@ int _printf(const char *format, ...)
 			format++;
 		}
 		else
-			write(1, format, 1), count++, format++;
+		{
+			write(1, format, 1);
+			count++, format++;
+		}
 	}
 	va_end(args);
 	return (count);
 }
+
 /**
  * handleformatprint1 - A subfunction handling format specificier print
  * @count: Pointer to count variable in parent function
