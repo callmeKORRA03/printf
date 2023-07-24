@@ -36,7 +36,7 @@ int _printf(const char *format, ...)
 				if (arrayStructFunction[i].c == *format)
 					count += arrayStructFunction[i].fpointer(args, (char *)format);
 			}
-			/* format++;*/
+			format++;
 		}
 		else
 		{
