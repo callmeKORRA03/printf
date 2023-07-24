@@ -12,11 +12,10 @@ int _printf(const char *format, ...)
 	int count = 0, i;
 	va_list args;
 
-	functionstruct arrayStructFunction[5] = {
-		{'c', _putchar}, {'s', _putstring}, {'d', _printint},
-		{'i', _printint}, {'u', _printint}};
 	va_start(args, format);
-	if (format == NULL)
+
+	if ((format == NULL) || (format[0] == '%' && format[1] == '\0')
+			|| (format[0] == '%' && format[1] == ' ' && !format[2]))
 		return (-1);
 	while (*format)
 	{
@@ -25,26 +24,48 @@ int _printf(const char *format, ...)
 			format++;
 			if (*format == '%')
 				write(1, "%", 1), count++;
-			else if (*format == ' ' || *format == '\0')
-			{
-				return (-1);
-			}
 			else
-			{
-				for (i = 0; i < 5; i++)
-				{
-					if (arrayStructFunction[i].c == *format)
-						count += arrayStructFunction[i].fpointer(args, (char *)format);
-				}
-			}
+				handleformatprint1(&count, (char *)format, args);
 			format++;
 		}
 		else
-		{
-			write(1, format, 1);
-			count++, format++;
-		}
+			write(1, format, 1), count++, format++;
 	}
 	va_end(args);
 	return (count);
+}
+/**
+ * handleformatprint1 - A subfunction handling format specificier print
+ * @count: Pointer to count variable in parent function
+ * @format: Pointer to first chaacter being format string
+ * @args: Argument list being passed from parent function
+ */
+
+void handleformatprint1(int *count, char *format, va_list args)
+{
+	char *f = format;
+	int i = 0;
+
+	functionstruct arrayStructFunction[5] = {
+		{'c', _putchar}, {'s', _putstring},
+		{'d', _printint}, {'i', _printint}, {'u', _printint}};
+
+	if (*f == 'd' || *f == 'i' || *f == 's' || *f == 'c' || *f == 'b')
+	{
+		for (i = 0; i < 5; i++)
+		{
+			if (arrayStructFunction[i].c == *f)
+				*count += arrayStructFunction[i].fpointer(args, format);
+		}
+	}
+	else if (*f == '%')
+	{
+		format++;
+	}
+	else
+	{
+		write(1, "%", 1);
+		write(1, format, 1);
+		*count += 2;
+	}
 }
