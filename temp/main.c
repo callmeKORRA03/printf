@@ -22,6 +22,8 @@ int main(void)
 	unsigned int unsignedInt = 42;
 
 	/* EXTRA TEST CASES*/
+	_printf("Printing Binary: ");
+	_printf("%b\n", 500);
 
 	len1 = _printf("Printing Unsigned Int [%s]: %i %i\n\n", "%i", 156799, 545565);
 	len1b = printf("Printing Unsigned Int [%s]: %i %i\n\n", "%i", 156799, 545565);

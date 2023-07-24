@@ -27,6 +27,7 @@ int _putchar(va_list, char *);
 int _putstring(va_list, char *);
 int _printint(va_list, char *);
 int _printpercent(va_list, char *);
+int _printbinary(va_list, char *str);
 
 /*Main _printf Function Prototype*/
 int _printf(const char *format, ...);
