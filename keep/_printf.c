@@ -16,19 +16,25 @@ int _printf(const char *format, ...)
 		{'c', _putchar}, {'s', _putstring}, {'d', _printint}, {'i', _printint},
 		{'u', _printint}, {'b', _printbinary}, {'%', _printpercent}};
 	va_start(args, format);
-	if (!format || (format[0] == '%' && !format[1]) ||
-			(format[0] == '%' && format[1] == ' ' && !format[2]))
+	if (format == NULL)
 		return (-1);
 	while (*format)
 	{
 		if (*format == '%')
 		{
 			format++;
+			if ((*format == ' ' && *(format + 1) == '\0') || *format == '\0')
+			{
+				return (-1);
+			}
+			else
+			{
 				for (i = 0; i < 7; i++)
 				{
 					if (arrayStructFunction[i].c == *format)
 						count += arrayStructFunction[i].fpointer(args, (char *)format);
 				}
+			}
 			format++;
 		}
 		else
