@@ -13,10 +13,11 @@ int _printf(const char *format, ...)
 	va_list args;
 
 	functionstruct arrayStructFunction[5] = {
-		{'c', _putchar}, {'s', _putstring}, {'d', _printint}, {'i', _printint}, {'u', _printint}};
+		{'c', _putchar}, {'s', _putstring}, {'d', _printint},
+		{'i', _printint}, {'u', _printint}};
 	va_start(args, format);
 	if (format == NULL)
-		return (1);
+		return (-1);
 	while (*format)
 	{
 		if (*format == '%')
@@ -24,13 +25,10 @@ int _printf(const char *format, ...)
 			format++;
 			if (*format == '%')
 				write(1, "%", 1), count++;
-<<<<<<< HEAD
-=======
 			else if (*format == ' ' || *format == '\0')
 			{
-				return (1);
+				return (-1);
 			}
->>>>>>> parent of 0ca4c0f (added minus sign back to the return)
 			else
 			{
 				for (i = 0; i < 5; i++)
