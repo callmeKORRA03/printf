@@ -25,7 +25,7 @@ int _printf(const char *format, ...)
 			format++;
 			if (*format == 'v' || *format == 'k')
 			{
-				write(1, "%", 1), write(1, format, 1);
+				/*write(1, "%", 1), write(1, format, 1); */
 			}
 			else if ((*format == ' ' && *(format + 1) == '\0') || *format == '\0')
 			{
