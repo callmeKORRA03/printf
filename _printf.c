@@ -12,9 +12,8 @@ int _printf(const char *format, ...)
 	int count = 0, i;
 	va_list args;
 
-	functionstruct arrayStructFunction[7] = {
-		{'c', _putchar}, {'s', _putstring}, {'d', _printint}, {'i', _printint},
-		{'u', _printint}, {'b', _printbinary}, {'%', _printpercent}};
+	functionstruct arrayStructFunction[5] = {
+		{'c', _putchar}, {'s', _putstring}, {'d', _printint}, {'i', _printint}, {'u', _printint}};
 	va_start(args, format);
 	if (format == NULL)
 		return (-1);
@@ -23,13 +22,11 @@ int _printf(const char *format, ...)
 		if (*format == '%')
 		{
 			format++;
-			if ((*format == ' ' && *(format + 1) == '\0') || *format == '\0')
-			{
-				return (-1);
-			}
+			if (*format == '%')
+				write(1, "%", 1), count++;
 			else
 			{
-				for (i = 0; i < 7; i++)
+				for (i = 0; i < 5; i++)
 				{
 					if (arrayStructFunction[i].c == *format)
 						count += arrayStructFunction[i].fpointer(args, (char *)format);
