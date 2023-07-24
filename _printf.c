@@ -20,14 +20,13 @@ int _printf(const char *format, ...)
 		return (-1);
 	while (*format)
 	{
+		if (!format || (*format == '%' && !(*(format + 1))) ||
+				(*format == '%' && *(format + 1) == ' ' && !(*(format + 2))))
+			return (-1);
 		if (*format == '%')
 		{
 			format++;
-			if (*format == 'v' || *format == 'k')
-			{
-				/*write(1, "%", 1), write(1, format, 1); */
-			}
-			else if (*format == ' ' || (*format == ' ' && *(format + 1) == '\0') || *format == '\0')
+			if ((*format == ' ' && *(format + 1) == '\0') || *format == '\0')
 			{
 				return (-1);
 			}
