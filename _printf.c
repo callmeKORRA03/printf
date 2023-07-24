@@ -27,7 +27,7 @@ int _printf(const char *format, ...)
 			{
 				/*write(1, "%", 1), write(1, format, 1); */
 			}
-			else if ((*format == ' ' && *(format + 1) == '\0') || *format == '\0')
+			else if (*format == ' ' || (*format == ' ' && *(format + 1) == '\0') || *format == '\0')
 			{
 				return (-1);
 			}
