@@ -23,4 +23,6 @@ int main(void)
     num2 = printf("Percentage: %%\n");
  _printf("Len:[%d]\n", num1);
     printf("Len1:[%d]\n\n", num2);
+
+    return (num1);
 }
