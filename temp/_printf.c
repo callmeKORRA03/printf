@@ -9,35 +9,41 @@
  */
 int _printf(const char *format, ...)
 {
-	int count = 0, i, flagsp = 0;
+	int count = 0, i;
 	va_list args;
 
-	functionstruct arrayStructFunction[6] = {
-		{'c', _putchar}, {'s', _putstring}, {'d', _printint},
-		{'i', _printint}, {'u', _printint}, {'%', _printpercent}};
+	functionstruct arrayStructFunction[5] = {
+		{'c', _putchar}, {'s', _putstring}, {'d', _printint}, {'i', _printint},
+		{'u', _printint}};
 	va_start(args, format);
 	if (format == NULL)
 		return (-1);
-flag1:
 	while (*format)
 	{
 		if (*format == '%')
 		{
 			format++;
-			while (*format == ' ')
+			if (*format == '%')
+				write(1, "%", 1), count++;
+			else if (*format == ' ' || *format == '\0')
 			{
-				if (*format == '\0' || *(format + 1) == '\0')
-					return (-1);
-				format++;
+				return (-1);
 			}
-			for (i = 0; i < 6; i++)
-				if (arrayStructFunction[i].c == *format)
-					count += arrayStructFunction[i].fpointer(args, (char *)format);
+			else
+			{
+				for (i = 0; i < 5; i++)
+				{
+					if (arrayStructFunction[i].c == *format)
+						count += arrayStructFunction[i].fpointer(args, (char *)format);
+				}
+			}
 			format++;
-			goto flag1;
 		}
-		write(1, format, 1);
-		count++, format++;
+		else
+		{
+			write(1, format, 1);
+			count++, format++;
+		}
 	}
 	va_end(args);
 	return (count);
