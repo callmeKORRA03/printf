@@ -52,10 +52,10 @@ void handleformatprint1(int *count, char *format, va_list args)
 	int i = 0;
 
 	functionstruct arrayStructFunction[5] = {
-		{'c', _putchar}, {'s', _putstring},
+		{'c', _putchar}, {'s', _putstring}, {'x', _printhex},
 		{'d', _printint}, {'i', _printint}, {'u', _printint}};
 
-	if (*f == 'd' || *f == 'i' || *f == 's' || *f == 'c' || *f == 'b')
+	if (*f == 'd' || *f == 'i' || *f == 's' || *f == 'c' || *f == 'b' || *f == 'x')
 	{
 		for (i = 0; i < 5; i++)
 		{
