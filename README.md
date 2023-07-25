@@ -7,8 +7,5 @@
 
 
 
-## Take Note
-
-- Kindly ensure that whichever sub-function you're implementing, for printing, they should return an integer. Which is a count of how many characters were succesfully printed. 
-
-`You can declare a int count variable that will be incremented at every sucessful character write. And then return the count variable at the end of the function`
+## Description 
+The `printf` project is the first Group project undertaken by students of the Alx Software Engineering Program. It purpose as it has shown from our experience implementing the requirements for the task, is to solidify the knowledge of the C programming language by us students in the program. 
