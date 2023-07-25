@@ -51,6 +51,9 @@ Handle the following conversion specifiers:
 ## Details of Code Implementation 
 At the heart of the printf is a call to the write(fd, char *, bytes) function. We used this function to implement a series of sub-functions that worked independently to handle the larger functionality of the _printf function. 
 
+# _printf(const char *format, ...);
+This is the main function prototype for the printf project.
+
 #### We built the following functions as appropriately named in the file manager panel.
 
 ### 1. _putchar(char *str, va_list args); 
@@ -58,8 +61,7 @@ At the heart of the printf is a call to the write(fd, char *, bytes) function. W
 ### 3. _printint(char *str, va_list args);
 ### 4. _printpercent(char *str, va_list args);
 
-# _printf(const char *format, ...);
-This is the main function prototype for the printf project.
+
 
 
 
