@@ -18,4 +18,5 @@ int _printpercent(va_list args, char *str)
 	counter++;
 
 	return (counter);
+
 }
