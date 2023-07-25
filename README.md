@@ -13,3 +13,5 @@ The `printf` project is the first Group project undertaken by students of the Al
 The printf function is one of the functions in the stdio.h header file. It is a very versatile tool and the most used function for printing to the STDOUT (Console/Terminal) in C. 
 
 The goal of this project, was to teach us as Alx Students (Cohort 16) various skills including, but not limited to the inner Workings of various concepts of the C programming language, GitHub Collaboration, Project Planning, Problem Solving and Research. 
+
+ ## Details of the Project Tasks We Handled
