@@ -48,5 +48,6 @@ Handle the following conversion specifiers:
 </ul>
 
 
-
+## Details of Code Implementation 
+At the heart of the printf is a call to the write(fd, char *, bytes) function. We used this function to implement a series of sub-functions that worked independently to handle the larger functionality of the _printf function. 
 
