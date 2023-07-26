@@ -51,15 +51,14 @@ void handleformatprint1(int *count, char *format, va_list args)
 	char *f = format;
 	int i = 0;
 
-	functionstruct arrayStructFunction[9] = {
+	functionstruct arrayStructFunction[6] = {
 		{'c', _putchar}, {'s', _putstring}, {'d', _printint},
-		{'x', _printhex}, {'X', _printHex}, {'o', _printoctal},
 		{'i', _printint}, {'u', _printint}, {'b', _printbinary}};
 
 	if (*f == 'd' || *f == 'i' || *f == 's' || *f == 'c' || *f == 'b'
-			|| *f == 'u' || *f == 'x' || *f == 'X' || *f == 'o')
+			|| *f == 'u')
 	{
-		for (i = 0; i < 9; i++)
+		for (i = 0; i < 6; i++)
 		{
 			if (arrayStructFunction[i].c == *f)
 				*count += arrayStructFunction[i].fpointer(args, format);
