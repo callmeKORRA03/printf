@@ -14,8 +14,8 @@ int _printf(const char *format, ...)
 
 	va_start(args, format);
 
-	if ((format == NULL) || (format[0] == '%' && format[1] == '\0') ||
-			(format[0] == '%' && format[1] == ' ' && !format[2]))
+	if ((format == NULL) || (format[0] == '%' && format[1] == '\0')
+			|| (format[0] == '%' && format[1] == ' ' && !format[2]))
 		return (-1);
 
 	while (*format)
@@ -51,14 +51,13 @@ void handleformatprint1(int *count, char *format, va_list args)
 	char *f = format;
 	int i = 0;
 
-	functionstruct arrayStructFunction[6] = {
-		{'c', _putchar}, {'s', _putstring}, {'d', _printint},
-		{'i', _printint}, {'u', _printint}, {'b', _printbinary}};
+	functionstruct arrayStructFunction[5] = {
+		{'c', _putchar}, {'s', _putstring},
+		{'d', _printint}, {'i', _printint}, {'u', _printint}};
 
-	if (*f == 'd' || *f == 'i' || *f == 's' || *f == 'c' || *f == 'b'
-			|| *f == 'u')
+	if (*f == 'd' || *f == 'i' || *f == 's' || *f == 'c' || *f == 'b')
 	{
-		for (i = 0; i < 6; i++)
+		for (i = 0; i < 5; i++)
 		{
 			if (arrayStructFunction[i].c == *f)
 				*count += arrayStructFunction[i].fpointer(args, format);

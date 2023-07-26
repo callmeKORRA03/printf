@@ -24,7 +24,6 @@ int _printint(va_list, char *);
 int _printpercent(va_list, char *);
 int _printbinary(va_list, char *str);
 void handleformatprint1(int *, char *, va_list);
-int _printbinary(va_list args, char *str);
 void convert_negative(unsigned int *positiveNum, int retrieved_number);
 void print_buffer_int(char buff[11], int index, int *counter);
 
